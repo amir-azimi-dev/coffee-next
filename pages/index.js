@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Slider from "@/components/templates/Index/Slider";
 
-function Home() {
+function Index() {
   return (
-    <div>Home</div>
-  )
+    <>
+      <Slider />
+    </>
+  );
 }
 
-export default Home
+export default Index;
