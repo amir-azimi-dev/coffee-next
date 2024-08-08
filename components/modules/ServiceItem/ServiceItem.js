@@ -3,7 +3,7 @@ import React from "react";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTruck } from "@fortawesome/free-solid-svg-icons";
+import * as icons from "@fortawesome/free-solid-svg-icons";
 config.autoAddCss = false;
 
 function ServiceItem({ title, description, icon, img }) {
@@ -14,7 +14,10 @@ function ServiceItem({ title, description, icon, img }) {
           <img className="img-fluid mb-3 mb-sm-0" src={img} alt={title} />
         </div>
         <div className="col-sm-7">
-          <h4>{icon && <FontAwesomeIcon icon={icon} className="service-icon px-2 py-2" />}{title}</h4>
+          <h4 className="d-flex align-items-center">
+            <FontAwesomeIcon icon={icons[icon]} className="service-icon rounded-circle p-2" style={{ width: "1.5rem", height: "1.5rem" }} />
+            {title}
+          </h4>
           <p className="m-0">{description}</p>
         </div>
       </div>
