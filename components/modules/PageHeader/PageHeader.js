@@ -7,9 +7,9 @@ function PageHeader({ route }) {
       <div className="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style={{ minHeight: 400 }}>
         <h1 className="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">{route}</h1>
         <div className="d-inline-flex mb-lg-5">
-          <p className="m-0 text-white"><Link className="text-white" href="">Home</Link></p>
+          <p className="m-0 text-white"><Link className="text-white" href="/">Home</Link></p>
           <p className="m-0 text-white px-2">/</p>
-          <p className="m-0 text-white">About Us</p>
+          <Link href={`/${route.toLowerCase()}`} className="m-0 text-white">{route}</Link>
         </div>
       </div>
     </div>
