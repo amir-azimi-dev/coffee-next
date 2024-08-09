@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import NavLink from "../NavLink/NavLink";
 import styles from "@/styles/Navbar.module.css";
 
 function Navbar() {
@@ -24,41 +25,27 @@ function Navbar() {
           id="navbarCollapse"
         >
           <div className={`${styles.navbar_nav} ml-auto p-4`}>
-            <Link
-              href="/"
-              className={`${styles.nav_link} ${styles.active_nav_link}`}
-            >
+            <NavLink
+              href="/">
               Home
-            </Link>
-            <Link href="/about" className={`${styles.nav_link}`}>
-              About
-            </Link>
-            <Link href="/services" className={`${styles.nav_link}`}>
-              Services
-            </Link>
-            <Link href="/menu" className={`${styles.nav_link}`}>
-              Menu
-            </Link>
+            </NavLink>
+            <NavLink href="/about">About</NavLink>
+            <NavLink href="/services">Services</NavLink>
+            <NavLink href="/menu">Menu</NavLink>
             <div className={`${styles.dropdown}`}>
-              <Link
-                href="/"
-                className={`${styles.nav_link} ${styles.dropdown_toggle}`}
-                data-toggle="dropdown"
-              >
-                Pages
-              </Link>
+              <Link href="/" className={styles.nav_link} data-toggle="dropdown">Pages</Link>
               <div className={`${styles.dropdown_menu} ${styles.text_capitalize}`}>
-                <Link href="/reservation" className={`${styles.dropdown_item}`}>
+                <NavLink href="/reservation" className="dropdown_item text-black-50">
                   Reservation
-                </Link>
-                <Link href="/testimonial" className={`${styles.dropdown_item}`}>
+                </NavLink>
+                <NavLink href="/testimonial" className="dropdown_item text-black-50">
                   Testimonial
-                </Link>
+                </NavLink>
               </div>
             </div>
-            <Link href="/contactus" className={`${styles.nav_link}`}>
-              Contact
-            </Link>
+            <NavLink href="/contactus" className={`${styles.nav_link}`}>
+              Contactus
+            </NavLink>
           </div>
         </div>
       </nav>
